@@ -15,6 +15,8 @@ router.post("/", upload.single("image"), async (req, res) => {
       folderName
     );
 
+    console.log(cloudinaryImageUrl);
+
     const cloudinaryImageUrl = cloudinaryResult.secure_url;
 
     const gfpgan = await replicate.models.get("tencentarc/gfpgan");
